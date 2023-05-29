@@ -19,13 +19,14 @@ ENV PGID=1000
 # Install yt-dlp
 RUN apt-get update && \
     DEBIAN_FRONTEND="noninteractive" apt-get upgrade -y && \
-    DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
+    DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     ca-certificates \
     python3 \
     python3-pip \
     ffmpeg \
+    atomicparsley \
     phantomjs && \
-    python3 -m pip install --upgrade yt-dlp  && \
+    python3 -m pip install --upgrade yt-dlp mutagen certifi brotli websockets && \
     rm -rf \
         /tmp/* \
         /var/lib/apt/lists/* \
