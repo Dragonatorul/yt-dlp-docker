@@ -19,7 +19,7 @@ ENV PGID=1000
 # Install yt-dlp
 RUN apt-get update && \
     DEBIAN_FRONTEND="noninteractive" apt-get upgrade -y && \
-    DEBIAN_FRONTEND="noninteractive" apt-get install -y \
+    DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
     ca-certificates \
     python3 \
     python3-pip \
